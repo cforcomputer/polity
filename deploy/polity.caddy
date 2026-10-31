@@ -1,0 +1,10 @@
+# Polity: marketing site and app (the app routes them by host, see src/proxy.ts). Imported by the main Caddyfile (import /etc/caddy/sites/*.caddy).
+polity.geckur.com, app.polity.geckur.com {
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options nosniff
+		-Server
+	}
+	reverse_proxy 127.0.0.1:3200
+}

@@ -1,0 +1,26 @@
+[Unit]
+Description=Polity (polity.geckur.com)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=polity
+WorkingDirectory=/opt/polity
+EnvironmentFile=/etc/polity.env
+Environment=NODE_ENV=production
+Environment=PORT=3200
+Environment=HOSTNAME=127.0.0.1
+Environment=POLITY_DATA=/var/lib/polity/db.json
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=2
+# The box is shared with Philform: cap memory so a spike here can't starve it.
+MemoryMax=450M
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/polity
+
+[Install]
+WantedBy=multi-user.target
