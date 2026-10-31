@@ -2,6 +2,15 @@
 
 Civic issue reporting for the Bay Area. Residents report problems, recommendations and ideas by text, voice, WhatsApp-style chat or a phone call. Claude Sonnet (`claude-sonnet-5-5`) categorizes each report, scores its priority, routes it to an agency and matches it to similar nearby reports. Staff work a ranked queue of clusters, and residents get notified as issues move to resolved.
 
+## Creative ideas
+
+Minimum number of potholes to fix to gain favor in x neighborhood for running political party.
+
+Linking solved issues to political candidate actions.
+"This problem was fixed by: Gavin Newson - **Press release**"
+
+Politicians can directly claim credit for solved issues.
+
 ## Run it
 
 ```bash
@@ -54,3 +63,5 @@ Expose your local server with a tunnel (for example `ngrok http 3000`). To enfor
 - `src/app/api/*`: route handlers. `src/app/*`: pages.
 
 Map tiles © Esri; geocoding by OpenStreetMap Nominatim.
+
+ 
